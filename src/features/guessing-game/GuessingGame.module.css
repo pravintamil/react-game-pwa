@@ -1,0 +1,28 @@
+.optionsContainer{
+  max-width: 600px;
+  margin: auto;
+}
+
+.optionsFlexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  margin: 10px !important;
+  width: calc(50% - 20px);
+}
+@media (max-width: 447px) {
+  .button {
+    width: calc(100% - 20px);
+  }
+}
+
+.shareContainer {
+  margin-top: 20px;
+}
+
+.learningSuggestion {
+  margin-top: 20px;
+}
