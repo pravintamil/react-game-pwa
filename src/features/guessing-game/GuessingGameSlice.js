@@ -76,7 +76,14 @@ export const initializeLogos = () => dispatch => {
         // window.jsTools = JSON.parse(JSON.stringify(tempLogos)) try to get rid of this
         window.localStorage.setItem('logos', JSON.stringify(tempLogos))
       }
-
+      tempLogos.forEach(logo => {
+        logo.url = "/logos/" + logo.name.toLowerCase() + ".png";
+        const imageEl = new Image();
+        imageEl.onload = function(){
+          imageEl.remove();
+        }
+        imageEl.src = logo.url;
+      });
       dispatch(guessingGameSlice.actions.setTempLogos(tempLogos));
     });
 };
