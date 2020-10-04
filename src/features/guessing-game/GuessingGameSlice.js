@@ -77,12 +77,12 @@ export const initializeLogos = () => dispatch => {
         window.localStorage.setItem('logos', JSON.stringify(tempLogos))
       }
       tempLogos.forEach(logo => {
-        logo.url = "/logos/" + logo.name.toLowerCase() + ".png";
+        logo.image_url = "/logos/" + logo.name.toLowerCase() + ".png";
         const imageEl = new Image();
         imageEl.onload = function(){
           imageEl.remove();
         }
-        imageEl.src = logo.url;
+        imageEl.src = logo.image_url;
       });
       dispatch(guessingGameSlice.actions.setTempLogos(tempLogos));
     });
